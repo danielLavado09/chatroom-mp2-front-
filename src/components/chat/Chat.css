@@ -1,0 +1,23 @@
+.container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+    background: #9ecfc7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+  
+    border-radius: 8px;
+    height: 90%;
+    width: 80%;
+}
+  
+.messagesWrapper {
+    padding-top: 40px;
+    flex-direction: column;
+    height: 80vh;
+    width: auto;
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+}
