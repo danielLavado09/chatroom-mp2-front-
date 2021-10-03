@@ -16,7 +16,7 @@ const Chat = () => {
     const [messages, setMessages] = useState([]);
     useEffect(() => {
         socket = io(ENDPT);
-        socket.emit('join', { name: user.name, room_id, user_id: user.id })
+        socket.emit('join', { name: user.name, room_id, user_id: user._id })
     }, [])
     useEffect(() => {
         socket.on('message', message => {
@@ -40,7 +40,7 @@ const Chat = () => {
         
     <div className="messagesWrapper">
         <div className="container">
-            <Messages messages={messages} user_id={user.id} />
+            <Messages messages={messages} user_id={user._id} />
             <Input
                 message={message}
                 setMessage={setMessage}

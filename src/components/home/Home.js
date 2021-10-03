@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../../UserContext';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import RoomList from './RoomList';
 import io from 'socket.io-client';
 let socket;
@@ -41,50 +42,32 @@ const Home = () => {
         setRoom('');
 
     }
-
-    const setAsJohn = () => {
-        const john = {
-            name: 'John',
-            email: 'john@email.com',
-            password: '123',
-            id: '123'
-        }
-        setUser(john);
-    }
-    const setAsTom = () => {
-        const tom = {
-            name: 'Tom',
-            email: 'tom@email.com',
-            password: '456',
-            id: '456'
-        }
-        setUser(tom);
+    if (!user) {
+        return <Redirect to='/login' />
     }
     return (
         <div>
             <div className="row">
                 <div className="col s12 m6">
-                    <div className="card blue-grey darken-1">
-                        <div className="card-content white-text">
+                    <div className="card blue-grey lighten-5">
+                        <div className="card-content black-text">
                             <span className="card-title">Bienvenido {user ? user.name : ''}</span>
                             <form onSubmit={handleSubmit}>
                                 <div className="row">
-                                    <div className="input-field col s12">
+                                    <div className="input-field col s12 black-text">
                                         <input
                                             placeholder="Ingrese el nombre de la sala"
-                                            id="room" type="text" className="validate"
+                                            id="room" type="text" className="validate black-text"
                                             value={room}
                                             onChange={e => setRoom(e.target.value)}
                                         />
-                                        <label htmlFor="room">Room</label>
+                                        <label htmlFor="room">Nombre de la sala:</label>
                                     </div>
                                 </div>
-                                <button className="btn">Create Room</button>
+                                <button className="btn white black-text">Crear sala</button>
                             </form>
                         </div>
                         <div className="card-action">
-                            <a href="#" onClick={setAsJohn}>set as John</a>
-                            <a href="#" onClick={setAsTom}>set as Tom</a>
                         </div>
                     </div>
                 </div>
@@ -92,10 +75,6 @@ const Home = () => {
                     <RoomList rooms={rooms} />
                 </div>
             </div>
-
-            <Link to={'/chat'}>
-                <button>go to chat</button>
-            </Link>
         </div>
     )
 }
