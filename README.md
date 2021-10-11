@@ -1,3 +1,14 @@
+# DoveChat
+
+DoveChat es una aplicacion web que permite la creacion de chatrooms o salas de chat para interactuar por medio de mensajes de texto
+con otras personas.
+
+Se puede crear nuevas salas de chat a las cuales pueden entrar varias personas, o tambien se puede entrar a una sala de chat ya creada antes,
+y seguir con la conversacion que se haya generado en la sala de chat.
+
+Al entrar en la aplicacion hay que crear un usuario con email y contraseña, que quedaran guardados en la base de datos, para que la siguiente
+vez que se ingrese no haya necesidad de volver a registrarse, solo se inicia sesion y se verifica que el usuario exista.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
