@@ -17,7 +17,7 @@ const Login = () => {
         setPasswordError('');
         console.log(name, email, password)
         try {
-            const res = await fetch('http://localhost:5000/login', {
+            const res = await fetch('https://chat-back-tertuapp.herokuapp.com/login', {
                 method: 'POST',
                 credentials: 'include',
                 body: JSON.stringify({ name, email, password }),
@@ -67,7 +67,7 @@ const Login = () => {
                     </div>
                 </div>
 
-                <button className="btn teal darken-3">Ingresar</button>
+                <button className="grey darken-4 btn-large">Ingresar</button>
             </form>
         </div>
 

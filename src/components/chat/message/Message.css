@@ -24,7 +24,7 @@
     position: relative;
     display: inline-block;
     padding: 1.5rem;
-    background: #00695c;
+    background: #292D53;
     color: #f6f6f6;
     -webkit-animation: bounce-in 1s 1;
             animation: bounce-in 1s 1;
@@ -38,7 +38,7 @@
     position: absolute;
     content: "";
     border: 1.5rem solid;
-    border-color: transparent #00695c #00695c transparent;
+    border-color: transparent #292D53 #292D53 transparent;
 
     right: 0;
   }

@@ -18,7 +18,7 @@ const Signup = () => {
         setPasswordError('');
         console.log(name, email, password)
         try {
-            const res = await fetch('http://localhost:5000/signup', {
+            const res = await fetch('https://chat-back-tertuapp.herokuapp.com/signup', {
                 method: 'POST',
                 credentials: 'include',
                 body: JSON.stringify({ name, email, password }),
@@ -79,7 +79,7 @@ const Signup = () => {
                     </div>
                 </div>
 
-                <button className="btn teal darken-3">Registrarse</button>
+                <button className="grey darken-4 btn-large">Registrarse</button>
             </form>
         </div>
 

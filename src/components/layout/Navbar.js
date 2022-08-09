@@ -8,7 +8,7 @@ const Navbar = () => {
 
     const logout = async () => {
         try {
-            const res = await fetch('http://localhost:5000/logout', {
+            const res = await fetch('https://chat-back-tertuapp.herokuapp.com/logout', {
                 credentials: 'include',
             });
             const data = res.json();
@@ -21,9 +21,9 @@ const Navbar = () => {
     const menu = user ? <SignedInMenu logout={logout} /> : <SignedOutMenu />
     return (
         <>
-            <nav className="teal darken-4">
+            <nav className="grey darken-4">
                 <div className="nav-wrapper">
-                    <a href="/" className="brand-logo center"><img src='/logo-dove-chat.png' height='50px' ></img>Dovechat</a>
+                    <a href="/" className="brand-logo center"><img src='/logochat.png' height='50px' ></img>TertAPP</a>
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
 
                     <ul id="nav-mobile" className="right hide-on-med-and-down">

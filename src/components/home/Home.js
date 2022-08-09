@@ -5,11 +5,12 @@ import { Redirect } from 'react-router-dom';
 import RoomList from './RoomList';
 import io from 'socket.io-client';
 let socket;
+
 const Home = () => {
     const { user, setUser } = useContext(UserContext);
     const [room, setRoom] = useState('');
     const [rooms, setRooms] = useState([]);
-    const ENDPT = 'localhost:5000';
+    const ENDPT = 'https://chat-back-tertuapp.herokuapp.com/';
 
     useEffect(() => {
         socket = io(ENDPT);
@@ -56,12 +57,12 @@ const Home = () => {
                                 <div className="row">
                                     <div className="input-field col s12 black-text">
                                         <input
-                                            placeholder="Ingrese el nombre de la sala"
+                                            placeholder=""
                                             id="room" type="text" className="validate black-text"
                                             value={room}
                                             onChange={e => setRoom(e.target.value)}
                                         />
-                                        <label htmlFor="room">Nombre de la sala:</label>
+                                        <label htmlFor="room">Nombre de la sala</label>
                                     </div>
                                 </div>
                                 <button className="btn white black-text">Crear sala</button>
